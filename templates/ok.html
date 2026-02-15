@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubSync | Teacher Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="nav-trigger" onclick="toggleNav()">
+        <span class="hamburger-icon">☰</span>
+        <span class="brand-text">SubSync<span>.</span></span>
+    </div>
+    
+    <div class="account-trigger" onclick="location.href='account.html'">
+        <img src="https://ui-avatars.com/api/?name=John+Williams&background=6366f1&color=fff" alt="Profile">
+    </div>
+
+    <div id="sidebarMenu" class="side-drawer">
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <div class="brand-text">SubSync<span>.</span></div>
+                <div class="close-btn" onclick="toggleNav()">×</div>
+            </div>
+            
+            <nav class="menu-items">
+                <a href="#" class="menu-link active">🏠 Dashboard</a>
+                <a href="#">📅 Week Timetable</a>
+                <a href="#">🔄 Substitutions</a>
+                <div class="menu-item-separator"></div>
+                <a href="#">⚙️ Settings</a>
+                <a href="#" class="menu-link logout">🚪 Logout</a>
+            </nav>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="toggleNav()"></div>
+
+    <div class="container">
+        <header class="hero">
+            <h1>Welcome back, <span class="accent">Prof. Williams!</span> 👋</h1>
+            <p>Monday, February 15, 2026</p>
+        </header>
+
+        <div class="dashboard-grid">
+            <section class="card">
+                <h2>Today's Schedule</h2>
+                <div class="schedule-list">
+                    <div class="item">
+                        <span class="time">09:00 AM</span>
+                        <span class="desc">Data Structures — Lab 3</span>
+                        <span class="tag ongoing">Ongoing</span>
+                    </div>
+                    <div class="item">
+                        <span class="time">11:30 AM</span>
+                        <span class="desc">Discrete Math — Hall B</span>
+                        <span class="tag">Upcoming</span>
+                    </div>
+                    <div class="item">
+                        <span class="time">02:00 PM</span>
+                        <span class="desc">Advanced AI <span class="badge">Sub</span></span>
+                        <span class="tag">Room 405</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Lecture Statistics</h2>
+                <div class="stats-container">
+                    <div class="pie-wrapper">
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle missed" stroke-dasharray="20, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle sub" stroke-dasharray="15, 100" stroke-dashoffset="-20" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                    </div>
+                    <div class="legend">
+                        <div class="legend-item"><span class="dot attended"></span> Attended</div>
+                        <div class="legend-item"><span class="dot missed"></span> Missed</div>
+                        <div class="legend-item"><span class="dot substitution"></span> Substitutions</div>
+                    </div>
+                </div>
+                <button class="primary-btn">View Full Report</button>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function toggleNav() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("overlay");
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
