@@ -1,0 +1,24 @@
+<html>
+<head>
+    <style>
+   .button-submit{
+    background-color: #bd70b5; 
+    border: none;
+    color: rgb(171, 44, 147);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+   }     
+    </style>
+</head>
+<body>
+    <h3>Teacher Portal: Upload Timetable</h3>
+
+<form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="timetable_file" required>
+    <button type="submit" class = "button-submit">Upload Timetable</button>
+</form>
+</body>
+</html>
